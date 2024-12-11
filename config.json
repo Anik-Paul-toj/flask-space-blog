@@ -1,0 +1,24 @@
+{
+    "params":
+    {
+        "blog_name" : "Daily Blogs",
+        "local_server" : "True",
+        "local_uri"  : "mysql://root:@localhost/daily blog", 
+        "prdo_uri" : "mysql://root:@localhost/daily blog", 
+        "fb_url": "https://facebook.com/dailyblog",
+        "tw_url" : "https://twitter.com/dailyblogs",
+        "gmail_user" : "trojanik003@gmail.com",
+        "gamil_pass" : "Anik@2003",
+        "about_text" : "Hey There! I am Anik Paul. This site is powered by a Flask-based web application designed to give users a seamless experience when browsing posts. From creating and editing content to managing and organizing ideas, this platform has been crafted with functionality and simplicity in mind. As a developer, I am passionate about building efficient and responsive web applications. Every line of code and every feature you see here is a product of continual learning, problem-solving, and creative thinking. Whether it's handling form submissions with Flask, designing intuitive user interfaces, or ensuring smooth data management, I'm always striving to make this platform better. The blog is an extension of my journey in the world of web development and my commitment to sharing knowledge. I hope you find something useful and engaging here. Feel free to explore, leave feedback, and enjoy the content!",
+        "number_of_posts" : 2,
+        "admin_user": "anik003",
+        "admin_pass": "Anik@123",
+        "login_image": "login.png"
+        
+        
+    },
+    "passwords":
+    {
+
+    }
+}

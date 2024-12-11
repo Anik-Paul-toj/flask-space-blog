@@ -1,0 +1,117 @@
+{% extends "layout.html"%}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+
+    .form-signin {
+      width: 100%;
+      max-width: 400px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background-color: #712cf9;
+      border-color: #712cf9;
+    }
+
+    .btn-primary:hover {
+      background-color: #6528e0;
+      border-color: #6528e0;
+    }
+
+    .form-floating label {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    .bd-mode-toggle {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    .border-top {
+        
+        position: fixed; /* Keeps it at the bottom of the viewport */
+        bottom: 0; /* Aligns it to the bottom */
+        width: 100%; /* Ensures full width */
+        border-top: 2px solid black; /* Defines the border */
+      
+    }
+    
+  
+ 
+  </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+<div class="bd-mode-toggle">
+  <button class="btn btn-primary dropdown-toggle" id="theme-toggle" data-bs-toggle="dropdown">
+    Toggle Theme
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="dropdown-item" onclick="setTheme('light')">Light</button></li>
+    <li><button class="dropdown-item" onclick="setTheme('dark')">Dark</button></li>
+    <li><button class="dropdown-item active" onclick="setTheme('auto')">Auto</button></li>
+  </ul>
+</div>
+
+<main class="form-signin" action="/sign" method="post">
+    <form action="/sign" method="post">
+      <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="uname" name="uname" placeholder="user_name">
+        <label for="uname">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+        <label for="pass">Password</label>
+      </div>
+  
+      <div class="form-check text-start mb-3">
+        <input class="form-check-input" type="checkbox" id="remember-me">
+        <label class="form-check-label" for="remember-me">Remember me</label>
+      </div>
+  
+      <button class="btn btn-primary w-100" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; {{params['blog_name']}} 2017–2024</p>
+    </form>
+  </main>
+  
+</main>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    const buttons = document.querySelectorAll('.dropdown-item');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    const activeButton = Array.from(buttons).find(btn => btn.textContent.trim().toLowerCase() === theme);
+    if (activeButton) activeButton.classList.add('active');
+  }
+</script>
+</body>
+</html>
+{% endblock %}
