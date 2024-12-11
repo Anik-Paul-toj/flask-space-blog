@@ -9,3 +9,5 @@ itsdangerous
 click
 WTForms
 python-dotenv
+gunicorn
+
